@@ -1,10 +1,12 @@
 
 function App() {
   const userName = "Marcelo";
-  const number = 13;  
+  const lName = "Silveira";
   return (
     <>
-      <p>Hello {userName}, your luck number is: {number}</p>
+      <h1>Hello {userName} {lName}</h1> 
+      <p>your luck number is: {Math.floor(10*Math.random())}</p>
+      <p>This year is: {new Date().getFullYear()}</p>
     </>
 );
 }
