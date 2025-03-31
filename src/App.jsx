@@ -1,12 +1,10 @@
+
 function App() {
+  const userName = "Marcelo";
+  const number = 13;  
   return (
     <>
-      <h1>React Test</h1>
-      <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-      </ul>
+      <p>Hello {userName}, your luck number is: {number}</p>
     </>
 );
 }
