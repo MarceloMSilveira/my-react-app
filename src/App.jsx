@@ -1,14 +1,11 @@
-
 function App() {
-  const userName = "Marcelo";
-  const lName = "Silveira";
+  const name = "Marcelo";
   return (
     <>
-      <h1>Hello {userName} {lName}</h1> 
-      <p>your luck number is: {Math.floor(10*Math.random())}</p>
-      <p>This year is: {new Date().getFullYear()}</p>
+      <h1>Create by {name}</h1>
+      <p>Copyright © {new Date().getFullYear()}</p>
     </>
-);
+  )
 }
 
 export default App;
