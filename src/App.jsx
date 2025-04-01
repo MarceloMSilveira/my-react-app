@@ -1,14 +1,20 @@
 function App() {
-  const name = "Marcelo";
+  
+  const customStyle = {
+    color: "orange",
+    border: "2px dashed blue", 
+    fontSize: "40px"
+  }
+
+  customStyle.color = "green"
+
   return (
     <>
-      <h1>Create by {name}</h1>
-      <h2 className="heading" contentEditable="true" spellCheck="false">My Favourite Foods</h2>
-      <ul>
-        <li>food 1</li>
-        <li>food 2</li>
-        <li>food 3</li>
-      </ul>
+      <h1>INLINE STYLE</h1>
+      
+      <p style={customStyle}> Add inLineStyle to this paragraph! </p>
+      <br />
+
       <p className="newClass">Copyright © {new Date().getFullYear()}</p>
     </>
   )
