@@ -1,21 +1,13 @@
+import Header from "./Header";
+import List from "./List";
+
 function App() {
-  
-  const customStyle = {
-    color: "orange",
-    border: "2px dashed blue", 
-    fontSize: "40px"
-  }
-
-  customStyle.color = "green"
-
   return (
     <>
-      <h1>INLINE STYLE</h1>
-      
-      <p style={customStyle}> Add inLineStyle to this paragraph! </p>
-      <br />
+      <Header />
+      <List />
 
-      <p className="newClass">Copyright © {new Date().getFullYear()}</p>
+      <p>Copyright © {new Date().getFullYear()}</p>
     </>
   )
 }
