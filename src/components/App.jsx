@@ -1,15 +1,20 @@
-import LoginForm from "./LoginForm";
+import Login from "./Login";
+
+let isLoged = false;
+
+function checkLogin() {
+  if (isLoged) {
+    return <h1>Hello</h1>  
+   } else {
+     return <Login /> 
+   }
+}
 
 function App() {
   return (
-    <>
-      <div className="container">
-        <h1>Hello</h1>
-        <LoginForm />
-      </div>
-
-      <p>Copyright © MS1 {new Date().getFullYear()}</p>
-    </>
+    <div className="container">
+      {checkLogin()}
+    </div>
   )
 }
 
