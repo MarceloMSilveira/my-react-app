@@ -1,19 +1,14 @@
-import Card from './Card'
-import contacts from '../contact';
-import Avatar from './Avatar'
 
 function renderCard(contact) {
   return(
-    <Card 
-        key = {contact.id}
-        name = {contact.name}
-        img = {{
-          src:contact.imgURL,
-          alt:"avatar_img"
-        }}
-        phone = {contact.phone}
-        email = {contact.email}
-      />
+<div className="container">
+      <h1>Hello</h1>
+      <form className="form">
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
   )
 }
 
