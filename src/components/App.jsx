@@ -1,29 +1,12 @@
-
-function renderCard(contact) {
-  return(
-<div className="container">
-      <h1>Hello</h1>
-      <form className="form">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  )
-}
+import LoginForm from "./LoginForm";
 
 function App() {
   return (
     <>
-      <h1 className="heading">My contacts</h1>
-      
-      {/* Show my avatar */}
-      <Avatar 
-        img={{src:"/images/eu.jpg",
-          alt:"avatar_img"}} 
-      />
-
-      {contacts.map(renderCard)}
+      <div className="container">
+        <h1>Hello</h1>
+        <LoginForm />
+      </div>
 
       <p>Copyright © MS1 {new Date().getFullYear()}</p>
     </>
