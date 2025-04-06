@@ -2,37 +2,39 @@ import Card from './Card'
 import contacts from '../contact';
 
 function App() {
+  //console.log(contacts[0].name)
   return (
     <>
       <h1 className="heading">My contacts</h1>
+       
       <Card 
-        name = "Beyonce"
+        name = {contacts[0].name}
         img = {{
-          src:"https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg",
+          src:contacts[0].imgURL,
           alt:"avatar_img"
         }}
-        phone = "+123 456 789"
-        email = "b@beyonce.com"
+        phone = {contacts[0].phone}
+        email = {contacts[0].email}
       />
 
       <Card 
-        name = "Chuck Norris"
+        name = {contacts[1].name}
         img = {{
-          src:"https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png",
+          src:contacts[1].imgURL,
           alt:"avatar_img"
         }}
-        phone = "+918 372 574"
-        email = "gmail@chucknorris.com"
+        phone = {contacts[1].phone}
+        email = {contacts[1].email}
       />
 
       <Card 
-        name = "Jack Bauer"
+        name = {contacts[2].name}
         img = {{
-          src:"https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg",
+          src:contacts[2].imgURL,
           alt:"avatar_img"
         }}
-        phone = "+987 654 321"
-        email = "jack@nowhere.com"
+        phone = {contacts[2].phone}
+        email = {contacts[2].email}
       />
 
       <p>Copyright © MS1 {new Date().getFullYear()}</p>
