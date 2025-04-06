@@ -1,4 +1,5 @@
 import Avatar from "./Avatar";
+import Detail from "./Detail";
 
 function Card ({name, img, phone, email}) {
   //console.log("test")
@@ -9,8 +10,8 @@ function Card ({name, img, phone, email}) {
         <Avatar img={{src:img.src, alt:img.alt}}/>
       </div>
       <div className="bottom">
-        <p className="info">{phone}</p>
-        <p className="info">{email}</p>
+        <Detail userInfo={phone}/>
+        <Detail userInfo={email}/>
       </div>
       
     </div>
