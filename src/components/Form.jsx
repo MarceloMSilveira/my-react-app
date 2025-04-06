@@ -1,10 +1,10 @@
-export default function Form() {
+export default function Form({isRegistered}) {
   return (
     <form className="form">
       <input type="text" placeholder="Username" />
       <input type="password" placeholder="Password" />
-      <input type="password" placeholder="Confirm Password" />
-      <button type="submit">Register</button>
+      {!isRegistered && <input type="password" placeholder="Confirm Password" />}
+      <button type="submit">{isRegistered ? "Login" : "Register"}</button>
     </form>
   );
 }

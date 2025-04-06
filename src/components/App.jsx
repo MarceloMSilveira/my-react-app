@@ -1,12 +1,11 @@
 import Form from "./Form";
-import Login from "./Login";
 
 let userIsRegistered = true;
 
 function App() {
   return (
     <div className="container">
-      {userIsRegistered ? <Login /> : <Form />}
+      <Form isRegistered={userIsRegistered}/>
     </div>
   )
 }
