@@ -4,6 +4,7 @@ function App() {
 
   const [isOver,setIsOver] = useState(false);
   const [userName, setName] = useState("");
+  const [nameInTitle, setTitle] = useState("");
 
   function handleOver() {
     setIsOver(true);
@@ -15,16 +16,18 @@ function App() {
 
   function handleClick() {
     const value = document.getElementById("name").value
-    setName(value);
+    setTitle(value);
   }
 
   function handleInput(evt) {
-    console.log(evt.target.value)
+    let value = evt.target.value;
+    //console.log(evt.target.value);
+    setName(value);
   }
 
   return (
     <div className="container">
-      <h1>Hello {userName}</h1>
+      <h1>Hello {nameInTitle}</h1>
       <input 
         id="name"
         type="text" 
