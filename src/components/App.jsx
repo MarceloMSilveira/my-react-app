@@ -15,13 +15,11 @@ function App() {
   }
 
   function handleClick() {
-    const value = document.getElementById("name").value
-    setTitle(value);
+    setTitle(userName);
   }
 
   function handleInput(evt) {
     let value = evt.target.value;
-    //console.log(evt.target.value);
     setName(value);
   }
 
