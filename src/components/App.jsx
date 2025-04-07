@@ -3,14 +3,10 @@ import cars from "../practice";
 const [honda, tesla] = cars;
 
 // Desestruturação correta para tesla
-const { coloursByPopularity: teslaColours, speedStats: teslaSpeedStats } = tesla;
-const teslaTopColour = teslaColours[0];
-const { topSpeed: teslaTopSpeed } = teslaSpeedStats;
+const { coloursByPopularity: [teslaTopColour], speedStats: {topSpeed:teslaTopSpeed} } = tesla;
 
 // Desestruturação correta para honda
-const { coloursByPopularity: hondaColours, speedStats: hondaSpeedStats } = honda;
-const hondaTopColour = hondaColours[0];
-const { topSpeed: hondaTopSpeed } = hondaSpeedStats;
+const { coloursByPopularity: [hondaTopColour], speedStats: {topSpeed:hondaTopSpeed} } = honda;
 
 
 function App() {
