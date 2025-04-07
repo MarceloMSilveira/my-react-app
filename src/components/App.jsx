@@ -1,37 +1,27 @@
-import cars from "../practice";
-
-const [honda, tesla] = cars;
-
-// Desestruturação correta para tesla
-const { coloursByPopularity: [teslaTopColour], speedStats: {topSpeed:teslaTopSpeed} } = tesla;
-
-// Desestruturação correta para honda
-const { coloursByPopularity: [hondaTopColour], speedStats: {topSpeed:hondaTopSpeed} } = honda;
-
+import { useState } from "react";
 
 function App() {
+
+  const [isOver,setIsOver] = useState(false);
+
+  function handleOver() {
+    setIsOver(true);
+  }
+
+  function handleOut() {
+    setIsOver(false);
+  }
+
   return (
-    <>
-      <table>
-      <tbody>
-      <tr>
-        <th>Brand</th>
-        <th>Top Speed</th>
-        <th>Top Colour</th>
-      </tr>
-      <tr>
-        <td>{tesla.model}</td>
-        <td>{teslaTopSpeed}</td>
-        <td>{teslaTopColour}</td>
-      </tr>
-      <tr>
-        <td>{honda.model}</td>
-        <td>{hondaTopSpeed}</td>
-        <td>{hondaTopColour}</td>
-      </tr>
-      </tbody>
-    </table>
-    </>
+    <div className="container">
+      <h1>Hello</h1>
+      <input type="text" placeholder="What's your name?" />
+      <button  
+        onMouseOver={handleOver}
+        onMouseOut={handleOut}
+        style={{backgroundColor: isOver && "black"}}
+      >Submit</button>
+    </div>
   )
 }
 
