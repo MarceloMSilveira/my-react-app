@@ -1,11 +1,20 @@
 import { useState } from 'react';
 
+const initialTime = new Date().toLocaleTimeString("en-US", { hour12: false });
+
 function App() {
+
+  const [time, setTime] = useState(initialTime)
+
+  function showClock() {
+    setInterval(()=> setTime(new Date().toLocaleTimeString("en-US", { hour12: false })),1000)
+  }
 
   return (
     <div className="container">
-      <h1>TIME</h1>
-      <button>Get Time</button>
+      <h1>{time}</h1>
+      <button onClick={() => setTime(new Date().toLocaleTimeString("en-US", { hour12: false }))}>Get Time</button>
+      {showClock()}
     </div>
   )
 }
@@ -14,8 +23,8 @@ export default App;
 
 //Challenge:
 //1. Given that you can get the current time using:
-let time = new Date().toLocaleTimeString();
-console.log(time);
+//let time = new Date().toLocaleTimeString();
+//console.log(time);
 //Show the latest time in the <h1> when the Get Time button
 //is pressed.
 
