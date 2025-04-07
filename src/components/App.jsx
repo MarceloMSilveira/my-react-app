@@ -14,8 +14,11 @@ function App() {
     setIsOver(false);
   }
 
-  function handleClick() {
+  function handleSubmit(evt) {
     setTitle(userName);
+    
+    
+    evt.preventDefault();
   }
 
   function handleInput(evt) {
@@ -26,19 +29,23 @@ function App() {
   return (
     <div className="container">
       <h1>Hello {nameInTitle}</h1>
-      <input 
-        id="name"
-        type="text" 
-        placeholder="What's your name?" 
-        onChange={handleInput}
-        value={userName}
-      />
-      <button  
-        onMouseOver={handleOver}
-        onMouseOut={handleOut}
-        onClick={handleClick}
-        style={{backgroundColor: isOver && "black"}}
-      >Submit</button>
+      <form onSubmit={handleSubmit}>
+        <input 
+          id="name"
+          type="text" 
+          placeholder="What's your name?" 
+          onChange={handleInput}
+          value={userName}
+        />
+        <button  
+          type="submit"
+          onMouseOver={handleOver}
+          onMouseOut={handleOut}
+          style={{backgroundColor: isOver && "black"}}
+          >Submit
+        </button>
+      </form>
+      
     </div>
   )
 }
