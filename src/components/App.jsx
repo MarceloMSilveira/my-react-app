@@ -1,46 +1,43 @@
-import { useState } from 'react';
+import cars from "../practice";
 
-const initialTime = new Date().toLocaleTimeString("en-US", { hour12: false });
+const [honda, tesla] = cars;
+
+// Desestruturação correta para tesla
+const { coloursByPopularity: teslaColours, speedStats: teslaSpeedStats } = tesla;
+const teslaTopColour = teslaColours[0];
+const { topSpeed: teslaTopSpeed } = teslaSpeedStats;
+
+// Desestruturação correta para honda
+const { coloursByPopularity: hondaColours, speedStats: hondaSpeedStats } = honda;
+const hondaTopColour = hondaColours[0];
+const { topSpeed: hondaTopSpeed } = hondaSpeedStats;
+
 
 function App() {
-
-  const [time, setTime] = useState(initialTime)
-
-  function showClock() {
-    setInterval(()=> setTime(new Date().toLocaleTimeString("en-US", { hour12: false })),1000)
-  }
-
   return (
-    <div className="container">
-      <h1>{time}</h1>
-      <button onClick={() => setTime(new Date().toLocaleTimeString("en-US", { hour12: false }))}>Get Time</button>
-      {showClock()}
-    </div>
+    <>
+      <table>
+      <tbody>
+      <tr>
+        <th>Brand</th>
+        <th>Top Speed</th>
+        <th>Top Colour</th>
+      </tr>
+      <tr>
+        <td>{tesla.model}</td>
+        <td>{teslaTopSpeed}</td>
+        <td>{teslaTopColour}</td>
+      </tr>
+      <tr>
+        <td>{honda.model}</td>
+        <td>{hondaTopSpeed}</td>
+        <td>{hondaTopColour}</td>
+      </tr>
+      </tbody>
+    </table>
+    </>
   )
 }
 
 export default App;
-
-//Challenge:
-//1. Given that you can get the current time using:
-//let time = new Date().toLocaleTimeString();
-//console.log(time);
-//Show the latest time in the <h1> when the Get Time button
-//is pressed.
-
-//2. Given that you can get code to be called every second
-//using the setInterval method.
-//Can you get the time in your <h1> to update every second?
-
-//e.g. uncomment the code below to see Hey printed every second.
-// function sayHi() {
-//   console.log("Hey");
-// }
-// setInterval(sayHi, 1000);
-
-// If you're running this locally in VS Code use the commands:
-// npm install
-// to install the node modules and
-// npm run dev
-// to launch your react project in your browser
 
