@@ -19,7 +19,7 @@ function App() {
   }
 
   function handleInput(evt) {
-    console.log(evt.target.value)
+    setName(evt.target.value);
   }
 
   return (
