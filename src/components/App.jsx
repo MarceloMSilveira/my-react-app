@@ -2,12 +2,13 @@ import { useState } from "react";
 
 function App() {
 
-  const [todoList,setList] = useState(['A Item'])
+  const [todoList,setList] = useState(['work out'])
   const [item,setItem] = useState("")
 
   function handleClick() {
     setList([...todoList,item])
     //clean input itemName
+    setItem("")
   }
 
   return (
@@ -28,7 +29,7 @@ function App() {
       </div>
       <div>
         <ul>
-          {console.log(todoList.forEach(item=>`<li>${item}</li>`))}
+          {todoList.map((item,index)=><li key={index}>{item}</li>)}
         </ul>
       </div>
     </div>
