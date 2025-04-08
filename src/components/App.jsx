@@ -2,37 +2,35 @@ import { useState } from "react";
 
 function App() {
 
-  const [contact,setContact] = useState({
-    fName:"",
-    lName:"",
-    email:""
-  })
+  const [todoList,setList] = useState(['A Item'])
+  const [item,setItem] = useState("")
+
+  function handleClick() {
+    setList([...todoList,item])
+    //clean input itemName
+  }
 
   return (
     <div className="container">
-      <h1>Hello {contact.fName} {contact.lName}</h1>
-      <p>{contact.email}</p>
-      <form onSubmit={evt=>evt.preventDefault()}>
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
         <input 
-          name="fName" 
-          placeholder="First Name" 
-          onChange={evt=>setContact({...contact, fName:evt.target.value})}
-          value={contact.fName}
+          type="text" 
+          name="itemName"
+          onChange={evt=>setItem(evt.target.value)}
+          value={item}
         />
-        <input 
-          name="lName" 
-          placeholder="Last Name"
-          onChange={evt=>setContact({...contact, lName:evt.target.value})}
-          value={contact.lName}
-        />
-        <input 
-          name="email" 
-          placeholder="Email"
-          onChange={evt=>setContact({...contact,email:evt.target.value})}
-          value={contact.email}
-        />
-        <button>Submit</button>
-      </form>
+        <button onClick={handleClick}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          {console.log(todoList.forEach(item=>`<li>${item}</li>`))}
+        </ul>
+      </div>
     </div>
   );
 }
@@ -40,13 +38,15 @@ function App() {
 export default App;
 
 
-//CHALLENGE: Make the code in App.jsx work.
-//The final app should have a single contact
-//with fName, lName and email.
+//CHALLENGE: Make this app work by applying what you've learnt.
+//1. When new text is written into the input, its state should be saved.
+//2. When the add button is pressed, the current data in the input should be
+//added to an array.
+//3. The <ul> should display all the array items as <li>s
 
-//HINT: You'll need to apply the following things you learnt:
-//1. Using JS Objects with state.
-//2. Making use of previous state when changing state.
-//3. Working with forms in React.
-//4. Handing events
+// If you're running this locally in VS Code use the commands:
+// npm install
+// to install the node modules and
+// npm run dev
+// to launch your react project in your browser
 
