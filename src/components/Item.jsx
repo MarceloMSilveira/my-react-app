@@ -1,17 +1,8 @@
-import { useState } from "react"
 
 export default function Item({itemContent}) {
-  const [done,setDone] = useState(false)
-  function handleClick() {
-    setDone(!done);
-  }
+
   return (
-    <li 
-      onClick={handleClick}
-      style={{textDecoration: done&&"line-through"}} >
+    <li>
       {itemContent}
     </li>)
 }
-
-
-{/*style={{textDecorator : line-through && done}} */}
