@@ -2,12 +2,33 @@ import { useState } from "react";
 
 function App() {
 
+  const [fName,setFName] = useState(" ")
+  const [lName,setLName] = useState(" ")
+
+  function handleChangeFName(evt) {
+    setFName(evt.target.value)
+  }
+
+  function handleChangeLName(evt) {
+    setLName(evt.target.value)
+  }
+
   return (
     <div className="container">
-      <h1>Hello</h1>
+      <h1>Hello {fName} {lName}</h1>
       <form>
-        <input name="fName" placeholder="First Name" />
-        <input name="lName" placeholder="Last Name" />
+        <input 
+          name="fName" 
+          placeholder="First Name" 
+          onChange={handleChangeFName}
+          value={fName}
+        />
+        <input 
+          name="lName" 
+          placeholder="Last Name"
+          onChange={handleChangeLName}
+          value={lName}
+        />
         <button>Submit</button>
       </form>
     </div>
@@ -15,10 +36,4 @@ function App() {
 }
 
 export default App;
-
-// If you're running this locally in VS Code use the commands:
-// npm install
-// to install the node modules and
-// npm run dev
-// to launch your react project in your browser
 
