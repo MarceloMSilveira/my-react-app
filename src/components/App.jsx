@@ -12,6 +12,10 @@ function App() {
     setItem("")
   }
 
+  function handleDeleteItem(id) {
+    setList(todoList.filter((item,index)=>index!==id));
+  }
+
   return (
     <div className="container">
       <div className="heading">
@@ -30,7 +34,7 @@ function App() {
       </div>
       <div>
         <ul>
-          {todoList.map((itemContent,index)=> <Item key={index} itemContent={itemContent} />)}
+          {todoList.map((itemContent,index)=> <Item key={index} id={index} itemContent={itemContent} funcToDelete={handleDeleteItem}/>)}
         </ul>
       </div>
     </div>

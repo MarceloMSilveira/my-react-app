@@ -1,8 +1,7 @@
 
-export default function Item({itemContent}) {
-
+export default function Item({id,itemContent,funcToDelete}) {
   return (
-    <li>
+    <li onClick={()=>funcToDelete(id)}>
       {itemContent}
     </li>)
 }
