@@ -2,53 +2,23 @@ import { useState } from "react";
 
 function App() {
 
-  const [isOver,setIsOver] = useState(false);
-  const [userName, setName] = useState("");
-  const [nameInTitle, setTitle] = useState("");
-
-  function handleOver() {
-    setIsOver(true);
-  }
-
-  function handleOut() {
-    setIsOver(false);
-  }
-
-  function handleSubmit(evt) {
-    setTitle(userName);
-    
-    
-    evt.preventDefault();
-  }
-
-  function handleInput(evt) {
-    let value = evt.target.value;
-    setName(value);
-  }
-
   return (
     <div className="container">
-      <h1>Hello {nameInTitle}</h1>
-      <form onSubmit={handleSubmit}>
-        <input 
-          id="name"
-          type="text" 
-          placeholder="What's your name?" 
-          onChange={handleInput}
-          value={userName}
-        />
-        <button  
-          type="submit"
-          onMouseOver={handleOver}
-          onMouseOut={handleOut}
-          style={{backgroundColor: isOver && "black"}}
-          >Submit
-        </button>
+      <h1>Hello</h1>
+      <form>
+        <input name="fName" placeholder="First Name" />
+        <input name="lName" placeholder="Last Name" />
+        <button>Submit</button>
       </form>
-      
     </div>
-  )
+  );
 }
 
 export default App;
+
+// If you're running this locally in VS Code use the commands:
+// npm install
+// to install the node modules and
+// npm run dev
+// to launch your react project in your browser
 
