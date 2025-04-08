@@ -8,24 +8,28 @@ function App() {
     email:""
   })
 
-  
-
   return (
     <div className="container">
       <h1>Hello {contact.fName} {contact.lName}</h1>
       <p>{contact.email}</p>
-      <form>
+      <form onSubmit={evt=>evt.preventDefault()}>
         <input 
           name="fName" 
           placeholder="First Name" 
+          onChange={evt=>setContact({...contact, fName:evt.target.value})}
+          value={contact.fName}
         />
         <input 
           name="lName" 
           placeholder="Last Name"
+          onChange={evt=>setContact({...contact, lName:evt.target.value})}
+          value={contact.lName}
         />
         <input 
           name="email" 
           placeholder="Email"
+          onChange={evt=>setContact({...contact,email:evt.target.value})}
+          value={contact.email}
         />
         <button>Submit</button>
       </form>
