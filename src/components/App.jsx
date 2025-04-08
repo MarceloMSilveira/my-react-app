@@ -2,43 +2,30 @@ import { useState } from "react";
 
 function App() {
 
-  const [fullName,setName] = useState({
+  const [contact,setContact] = useState({
     fName:"",
-    lName:""
+    lName:"",
+    email:""
   })
 
-  function handleChangeName(evt) {
-    const {name,value} = evt.target;
-    if (name==='fName') {
-      setName({
-        ...fullName,
-        fName: value
-      }
-      )  
-    } else if (name==='lName') {
-      setName({
-        ...fullName,
-        lName: value
-      }
-      )
-    }
-  }
+  
 
   return (
     <div className="container">
-      <h1>Hello {fullName.fName} {fullName.lName}</h1>
+      <h1>Hello {contact.fName} {contact.lName}</h1>
+      <p>{contact.email}</p>
       <form>
         <input 
           name="fName" 
           placeholder="First Name" 
-          onChange={handleChangeName}
-          value={fullName.fName}
         />
         <input 
           name="lName" 
           placeholder="Last Name"
-          onChange={handleChangeName}
-          value={fullName.lName}
+        />
+        <input 
+          name="email" 
+          placeholder="Email"
         />
         <button>Submit</button>
       </form>
@@ -47,4 +34,15 @@ function App() {
 }
 
 export default App;
+
+
+//CHALLENGE: Make the code in App.jsx work.
+//The final app should have a single contact
+//with fName, lName and email.
+
+//HINT: You'll need to apply the following things you learnt:
+//1. Using JS Objects with state.
+//2. Making use of previous state when changing state.
+//3. Working with forms in React.
+//4. Handing events
 
